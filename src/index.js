@@ -56,7 +56,7 @@ class Menu extends Component {
                 <tr>
                     <td>
                         <NavLink activeStyle={{color: 'darkblue'}} exact to="/">
-                            React example
+                            React exam
                         </NavLink>
                     </td>
                     <td>
