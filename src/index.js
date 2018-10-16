@@ -66,7 +66,7 @@ class Menu extends Component {
                     </td>
                     <td>
                         <NavLink activeStyle={{color: 'darkblue'}} to="/fag">
-                            Fag
+                            Classes
                         </NavLink>
                     </td>
                 </tr>
@@ -166,11 +166,22 @@ class ClassDetails extends Component<{ match: { params: { fagKode: string } } }>
             return null; // Return empty object (nothing to render)
         }
         return (
-            <div>
-                <ul>
-                    <li>fagKode: {faget.fagKode}</li>
-                    <li>fagTittel: {faget.fagTittel}</li>
-                    <li>deltakere: {faget.deltakere.map(e => e.lastName + ', ' + e.firstName).reduce((acc, e) => acc + '; ' + e)}</li>
+            <div className="card">
+                <div className="card-header">
+                    Class:
+                </div>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Class Code: {faget.fagKode}</li>
+                    <li className="list-group-item">Name: {faget.fagTittel}</li>
+
+                    <div className="card-footer">
+                        Students:
+                    </div>
+                    <li className="list-group-item">{faget.deltakere.map(e => (
+                        <li className="list-group-item">
+                            {e.firstName + " " + e.lastName}
+                        </li>
+                    ))}</li>
                 </ul>
             </div>
         );
@@ -180,6 +191,7 @@ class ClassDetails extends Component<{ match: { params: { fagKode: string } } }>
 const root = document.getElementById('root');
 if (root)
     ReactDOM.render(
+
         <HashRouter>
             <div>
                 <div className="navbar">
