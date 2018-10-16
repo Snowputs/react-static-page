@@ -53,7 +53,7 @@ class Menu extends Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#">Navbar</a>
+                    <a className="navbar-brand">Oving 9</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -61,8 +61,6 @@ class Menu extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className="nav-item nav-link active" href="#">Home <span
-                                className="sr-only">(current)</span></a>
                             <a className="nav-item nav-link" href="#/students">Students</a>
                             <a className="nav-item nav-link" href="#/fag">Classes</a>
                         </div>
@@ -176,7 +174,7 @@ class ClassDetails extends Component<{ match: { params: { fagKode: string } } }>
                     </div>
                     <li className="list-group-item">{faget.deltakere.map(e => (
                         <li className="list-group-item">
-                            {e.firstName + " " + e.lastName}
+                            {e.firstName + " " + e.lastName + "; " + e.email}
                         </li>
                     ))}</li>
                 </ul>
